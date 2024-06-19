@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as LR from '@uploadcare/blocks'
 import { useRouter } from 'next/navigation'
+import '@uploadcare/react-uploader/core.css';
 
 type Props = {
   onUpload: (e: string) => any

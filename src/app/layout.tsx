@@ -7,8 +7,10 @@ import {
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+  UserButton,
+} from "@clerk/nextjs";
+import ModalProvider from "@/providers/modal-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const font = Noto_Sans({ subsets: ["latin"] });
 
@@ -24,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider
-      // publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html lang="en">
         <body className={font.className}>
@@ -34,7 +36,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ModalProvider>
+              {children}
+              <Toaster />
+            </ModalProvider>
           </ThemeProvider>
         </body>
       </html>

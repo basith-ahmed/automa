@@ -16,12 +16,15 @@ export async function GET() {
     return NextResponse.json({ message: 'User not found' })
   }
 
+  const provider = "oauth_google";
+
   const clerkResponse = await clerkClient.users.getUserOauthAccessToken(
     userId,
-    'oauth_google'
+    provider
   )
 
   const accessToken = clerkResponse[0].token
+
   oauth2Client.setCredentials({
     access_token: accessToken,
   })

@@ -1,18 +1,13 @@
-import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
-import ModalProvider from "@/providers/modal-provider";
-import { Toaster } from "@/components/ui/sonner";
+import type { Metadata } from 'next'
+import { DM_Sans } from 'next/font/google'
+import './globals.css'
+import { ThemeProvider } from '@/providers/theme-provider'
+import { ClerkProvider } from '@clerk/nextjs'
+import ModalProvider from '@/providers/modal-provider'
+import { Toaster } from '@/components/ui/sonner'
+import { BillingProvider } from '@/providers/billing-provider'
 
-const font = Noto_Sans({ subsets: ["latin"] });
+const font = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Automá",
@@ -22,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <ClerkProvider
@@ -36,13 +31,15 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <ModalProvider>
-              {children}
-              <Toaster />
-            </ModalProvider>
+            <BillingProvider>
+              <ModalProvider>
+                {children}
+                <Toaster />
+              </ModalProvider>
+            </BillingProvider>
           </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
-  );
+  )
 }

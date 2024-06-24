@@ -1,5 +1,5 @@
 'use server'
-import clerk from '@clerk/clerk-sdk-node'
+// import clerk from '@clerk/clerk-sdk-node'
 import { auth } from '@clerk/nextjs/server'
 import { google } from 'googleapis'
 
@@ -17,16 +17,16 @@ export const getFileMetaData = async () => {
     return { message: 'User not found' }
   }
 
-  const clerkResponse = await clerk.users.getUserOauthAccessToken(
-    userId,
-    'oauth_google'
-  )
+  // const clerkResponse = await clerk.users.getUserOauthAccessToken(
+  //   userId,
+  //   'oauth_google'
+  // )
 
-  const accessToken = clerkResponse[0].token
+  // const accessToken = clerkResponse[0].token
 
-  oauth2Client.setCredentials({
-    access_token: accessToken,
-  })
+  // oauth2Client.setCredentials({
+  //   access_token: accessToken,
+  // })
 
   const drive = google.drive({ version: 'v3', auth: oauth2Client })
   const response = await drive.files.list()

@@ -5,6 +5,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { SubscriptionCard } from './subscription-card'
 import CreditTracker from './creadits-tracker'
+import { Separator } from '@/components/ui/separator'
 
 type Props = {}
 
@@ -71,6 +72,7 @@ const BillingDashboard = (props: Props) => {
               products={stripeProducts}
             />
           </div>
+          <Separator className='mx-2'/>
           <CreditTracker
             tier={tier}
             credits={parseInt(credits)}

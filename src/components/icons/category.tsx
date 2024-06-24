@@ -1,63 +1,25 @@
-import clsx from 'clsx'
-import React from 'react'
+import clsx from "clsx";
+import React from "react";
 
-type Props = { selected: boolean }
+type Props = { selected: boolean };
 
 function Category({ selected }: Props) {
   return (
     <svg
+      className={clsx(
+        "dark:group-hover:fill-[#4044a9] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#4044a9]",
+        { "dark:!fill-[#c7d8ff] fill-[#4044a9] ": selected }
+      )}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      fill="currentColor"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        x="3"
-        y="3"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <rect
-        x="3"
-        y="13"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <rect
-        x="13"
-        y="3"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <rect
-        x="13"
-        y="13"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
+      <path d="M5 3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Zm14 18a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4ZM5 11a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H5Zm14 2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4Z" />
     </svg>
-  )
+  );
 }
 
-export default Category
+export default Category;

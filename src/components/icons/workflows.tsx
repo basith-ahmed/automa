@@ -1,26 +1,29 @@
-import clsx from 'clsx'
-import React from 'react'
+import clsx from "clsx";
+import React from "react";
 
-type Props = { selected: boolean }
+type Props = { selected: boolean };
 
 const Workflows = ({ selected }: Props) => {
   return (
     <svg
+      className={clsx(
+        "dark:group-hover:fill-[#4044a9] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#4044a9]",
+        { "dark:!fill-[#c7d8ff] fill-[#4044a9] ": selected }
+      )}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      fill="currentColor"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M15.0034 4.69724C15.451 2.17765 12.2728 0.692639 10.6273 2.65246L3.58895 11.0353C2.22322 12.6619 3.37965 15.1429 5.50357 15.1429H9.7351L8.99616 19.3027C8.54859 21.8223 11.7267 23.3073 13.3722 21.3475L20.4107 12.9647C21.7764 11.3381 20.62 8.85714 18.496 8.85714H14.2645L15.0034 4.69724Z"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] !fill-[#7540A9] ': selected }
-        )}
+        fill-rule="evenodd"
+        d="M5 6a3 3 0 1 1 4 2.83V10a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V8.83a3.001 3.001 0 1 1 2 0V10a3 3 0 0 1-3 3h-1v2.17a3.001 3.001 0 1 1-2 0V13h-1a3 3 0 0 1-3-3V8.83A3.001 3.001 0 0 1 5 6Z"
+        clip-rule="evenodd"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Workflows
+export default Workflows;

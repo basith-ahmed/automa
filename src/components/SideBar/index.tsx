@@ -21,10 +21,10 @@ const MenuOptions = () => {
   const pathName = usePathname();
 
   return (
-    <nav className=" dark:bg-black h-screen overflow-scroll  justify-between flex items-center flex-col  gap-10 py-6 px-2">
+    <nav className=" dark:bg-black h-screen overflow-scroll  justify-between flex items-center flex-col  gap-10 py-4 px-2">
       <div className="flex items-center justify-center flex-col gap-8">
-        <Link className="font-bold flex flex-bold" href={"/"}>
-          Automá
+        <Link className="font-bold text-4xl" href={"/"}>
+          Á
         </Link>
         <TooltipProvider>
           {menuOptions.map((menuItem) => (
@@ -37,7 +37,7 @@ const MenuOptions = () => {
                       className={clsx(
                         "group h-8 w-8 flex items-center justify-center  scale-[1.5] rounded-lg p-[3px] cursor-pointer",
                         {
-                          "dark:bg-[#2F006B] bg-[#EEE0FF] ":
+                          "dark:bg-[#0b006b] bg-[#e0e4ff] ":
                             pathName === menuItem.href,
                         }
                       )}

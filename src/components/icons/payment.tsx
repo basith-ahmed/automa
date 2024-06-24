@@ -1,50 +1,36 @@
-import clsx from 'clsx'
-import React from 'react'
+import clsx from "clsx";
+import React from "react";
 
 type Props = {
-  selected: boolean
-}
+  selected: boolean;
+};
 
 const Payment = ({ selected }: Props) => {
   return (
     <svg
+      className={clsx(
+        "dark:group-hover:fill-[#4044a9] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#4044a9]",
+        { "dark:!fill-[#c7d8ff] fill-[#4044a9] ": selected }
+      )}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      fill="currentColor"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        x="2"
-        y="4"
-        width="20"
-        height="16"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
+      <path
+        fill-rule="evenodd"
+        d="M4 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H4Zm0 6h16v6H4v-6Z"
+        clip-rule="evenodd"
       />
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M22 10H2V8H22V10Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M4 15C4 14.4477 4.44772 14 5 14H11C11.5523 14 12 14.4477 12 15C12 15.5523 11.5523 16 11 16H5C4.44772 16 4 15.5523 4 15Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
+        fill-rule="evenodd"
+        d="M5 14a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Zm5 0a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1Z"
+        clip-rule="evenodd"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Payment
+export default Payment;
